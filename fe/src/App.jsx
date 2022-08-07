@@ -49,6 +49,7 @@ function Custom() {
 
     var ipfs_url = `${cid}.ipfs.dweb.link`;
     console.log(ipfs_url);
+    alert(ipfs_url);
     // console.log(process.env.REACT_APP_NFT_PORT_KEY)
 
     // axios.post("https://api.nftport.xyz/v0/mints/easy/urls", {
@@ -69,8 +70,9 @@ function Custom() {
     // });
 
   }
-  return <div>Hello, submit music file.
+  return <div className="mainDiv">Hello, submit music file.
     <input type="file" name="file" onChange={changeHandler} />
+    <br/>
     <div>
       <button onClick={handleSubmission}>Submit</button>
     </div>
