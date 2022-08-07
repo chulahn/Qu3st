@@ -16,6 +16,8 @@ import {
   Slider,
 } from "antd";
 import { Web3Storage, getFilesFromPath } from "web3.storage";
+const axios = require("axios").default;
+
 
 var token = process.env.REACT_APP_KEY;
 
@@ -45,8 +47,29 @@ function Custom() {
     const cid = await storage.put(files);
     console.log("Content added with CID:", cid);
 
+    var ipfs_url = `${cid}.ipfs.dweb.link`;
+    console.log(ipfs_url);
+    // console.log(process.env.REACT_APP_NFT_PORT_KEY)
+
+    // axios.post("https://api.nftport.xyz/v0/mints/easy/urls", {
+    //     chain: "polygon",
+    //     name: "Qu3st Song",
+    //     description: `AuthorID: "Chul"`,
+    //     file_url: ipfs_url,
+    //     mint_to_address: "0x4Fbf38eFCDeb381F753BAAA22233cA40dF3123Ac"
+    // }, {
+    //     headers: {
+    //         "Authorization": process.env.REACT_APP_NFT_PORT_KEY,
+    //         "Content-Type": "application/json"
+    //     }
+    // }).then(function(response) {
+    //   console.log(`https://polygonscan.com/tx/${response.data.transaction_hash})`);
+    // }).catch(function(error) {
+    //     console.log(error);
+    // });
+
   }
-  return <div>HellO
+  return <div>Hello, submit music file.
     <input type="file" name="file" onChange={changeHandler} />
     <div>
       <button onClick={handleSubmission}>Submit</button>
