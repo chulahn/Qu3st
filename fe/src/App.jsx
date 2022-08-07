@@ -63,66 +63,7 @@ function App() {
           <Route exact path="/" element={<Custom/>}>
           </Route>
 
-          {/* <Route path="/transfers">
-
-
-
-            <div style={{ width: 600, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
-              <List
-                bordered
-                dataSource={transferEvents}
-                renderItem={item => {
-                  return (
-                    <List.Item key={item[0] + "_" + item[1] + "_" + item.blockNumber + "_" + item.args[2].toNumber()}>
-                      <span style={{ fontSize: 16, marginRight: 8 }}>#{item.args[2].toNumber()}</span>
-                      <Address address={item.args[0]} ensProvider={mainnetProvider} fontSize={16} /> =&gt;
-                      <Address address={item.args[1]} ensProvider={mainnetProvider} fontSize={16} />
-                    </List.Item>
-                  );
-                }}
-              />
-            </div>
-          </Route> */}
-
-          {/* <Route path="/collections">
-          <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
-              <List
-                bordered
-                dataSource={yourCollectibles}
-                renderItem={item => {
-                  const id = item.id.toNumber();
-                  return (
-                    <List.Item key={id + "_" + item.uri + "_" + item.owner}>
-                      <Card
-                        title={
-                          <div>
-                            {item.name}
-                          </div>
-                        }
-                      >
-                        <div>
-                          <img src={item.image} style={{ maxWidth: 150 }} />
-                        </div>
-                        <div>{item.description}</div>
-                      </Card>
-
-                      <div>
-                        <Button
-                          href="/collection_details"
-                        >
-                          Explore Collection
-                        </Button>
-                      </div>
-                    </List.Item>
-                  );
-                }}
-              />
-            </div>
           
-          </Route> */}
-          {/**  const test = useContractReader(readContracts, "Dyve",  "token", []);
-  console.log(test);
- */}
         </Routes>
       </BrowserRouter>
     </div>
